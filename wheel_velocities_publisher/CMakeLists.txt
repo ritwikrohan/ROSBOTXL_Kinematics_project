@@ -24,4 +24,12 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+add_executable(wheel_velocities_publisher src/wheel_velocities_publisher.cpp)
+ament_target_dependencies(wheel_velocities_publisher rclcpp geometry_msgs nav_msgs std_msgs)
+
+install(TARGETS
+   wheel_velocities_publisher
+   DESTINATION lib/${PROJECT_NAME}
+ )
+
 ament_package()
