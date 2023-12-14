@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(kinematic_model)
+project(eight_trajectory)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,6 +11,8 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 if(BUILD_TESTING)
@@ -30,12 +32,12 @@ include_directories(
   ${EIGEN3_INCLUDE_DIRS}  # Add this line to include Eigen
 )
 
-add_executable(kinematic_model src/kinematic_model.cpp)
-target_link_libraries(kinematic_model ${EIGEN3_LIBRARIES})
-ament_target_dependencies(kinematic_model rclcpp geometry_msgs nav_msgs std_msgs Eigen3)
+add_executable(eight_trajectory src/eight_trajectory.cpp)
+target_link_libraries(eight_trajectory ${EIGEN3_LIBRARIES})
+ament_target_dependencies(eight_trajectory rclcpp geometry_msgs nav_msgs std_msgs Eigen3 tf2 tf2_geometry_msgs)
 
 install(TARGETS
-   kinematic_model
+   eight_trajectory
    DESTINATION lib/${PROJECT_NAME}
  )
 
