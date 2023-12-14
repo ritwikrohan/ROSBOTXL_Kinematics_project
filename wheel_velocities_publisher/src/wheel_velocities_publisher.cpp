@@ -43,37 +43,37 @@ class WheelVelocitiesPublisher : public rclcpp::Node
             std::this_thread::sleep_for(std::chrono::seconds(10));
             std_msgs::msg::Float32MultiArray velocities;
             RCLCPP_INFO(this->get_logger(), "Move forward");
-            std::vector<float> velocitiesVector = {1.0, 1.0, 1.0, 1.0};
+            std::vector<float> velocitiesVector = {3.0, 3.0, 3.0, 3.0};
             velocities.data = velocitiesVector;
             wheel_speed_pub_->publish(velocities);
             std::this_thread::sleep_for(std::chrono::seconds(3));
 
             RCLCPP_INFO(this->get_logger(), "Move backward");
-            velocitiesVector = {-1.0, -1.0, -1.0, -1.0};
+            velocitiesVector = {-3.0, -3.0, -3.0, -3.0};
             velocities.data = velocitiesVector;
             wheel_speed_pub_->publish(velocities);
             std::this_thread::sleep_for(std::chrono::seconds(3));
 
             RCLCPP_INFO(this->get_logger(), "Move left");
-            velocitiesVector = {-1.0, 1.0, -1.0, 1.0};
+            velocitiesVector = {-3.0, 3.0, -3.0, 3.0};
             velocities.data = velocitiesVector;
             wheel_speed_pub_->publish(velocities);
             std::this_thread::sleep_for(std::chrono::seconds(3));
 
             RCLCPP_INFO(this->get_logger(), "Move right");
-            velocitiesVector = {1.0, -1.0, 1.0, -1.0};
+            velocitiesVector = {3.0, -3.0, 3.0, -3.0};
             velocities.data = velocitiesVector;
             wheel_speed_pub_->publish(velocities);
             std::this_thread::sleep_for(std::chrono::seconds(3));
 
             RCLCPP_INFO(this->get_logger(), "Turn clockwise");
-            velocitiesVector = {1.0, -1.0, -1.0, 1.0};
+            velocitiesVector = {3.0, -3.0, -3.0, 3.0};
             velocities.data = velocitiesVector;
             wheel_speed_pub_->publish(velocities);
             std::this_thread::sleep_for(std::chrono::seconds(3));
 
             RCLCPP_INFO(this->get_logger(), "Turn counter-clockwise");
-            velocitiesVector = {-1.0, 1.0, 1.0, -1.0};
+            velocitiesVector = {-3.0, 3.0, 3.0, -3.0};
             velocities.data = velocitiesVector;
             wheel_speed_pub_->publish(velocities);
             std::this_thread::sleep_for(std::chrono::seconds(3));

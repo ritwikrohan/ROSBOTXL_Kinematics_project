@@ -11,6 +11,8 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(Eigen3 REQUIRED)
+find_package(Armadillo REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -23,5 +25,20 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+include_directories(
+  include
+  ${EIGEN3_INCLUDE_DIRS}  # Add this line to include Eigen
+)
+
+add_executable(kinematic_model src/kinematic_model.cpp)
+target_link_libraries(kinematic_model ${EIGEN3_LIBRARIES})
+ament_target_dependencies(kinematic_model rclcpp geometry_msgs nav_msgs std_msgs Eigen3)
+
+install(TARGETS
+   kinematic_model
+   DESTINATION lib/${PROJECT_NAME}
+ )
+
 
 ament_package()
