@@ -92,7 +92,7 @@ class EightTrajectory : public rclcpp::Node
             Eigen::Matrix<double, 3, 1> w8;
             w8 << 0.0, -1, -1;
             Eigen::Matrix<double, 3, 1> w9;
-            w9 << 0.0, 0.0, 0.0; 
+            w9 << 1.5708, 0.0, 0.0; 
 
             std::vector<Eigen::Matrix<double, 3, 1>> waypoints = {w1, w2, w3, w4, w5, w6, w7, w8, w9};
             std_msgs::msg::Float32MultiArray wheel_msg;
