@@ -10,9 +10,9 @@ This project implements forward and inverse kinematics for mecanum wheel robots,
 
 ### Figure-8 Trajectory Execution
 <p align="center">
-  <img src="https://i.imgflip.com/a4fkha.gif" alt="Figure-8 Trajectory Demo" width="380">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="./image.png" alt="Figure-8 Waypoint Pattern" width="380">
+  <img src="https://i.imgflip.com/a4fkha.gif" alt="Figure-8 Trajectory Demo" width="700">
+  &nbsp;&nbsp;
+  <img src="image.png" alt="Figure-8 Waypoint Pattern" width="500">
 </p>
 
 *Mecanum robot executing perfect figure-8 trajectory using inverse kinematics and coordinated wheel control*
